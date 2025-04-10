@@ -3,6 +3,9 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import userRoutes from "./Routes/user-routes.js";
 import productRoutes from "./Routes/product-routes.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
@@ -25,7 +28,7 @@ app.use((req, res, next) => {
     next()
 });
 
-let mongourl = "mongodb+srv://admin:123@cluster0.vfgpw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+let mongourl = process.env.mongo_url;
 
 mongoose.connect(mongourl)
 
