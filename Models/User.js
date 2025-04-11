@@ -37,7 +37,14 @@ const userSchema = new mongoose.Schema({
     phone: {
         type: String,
         required: true
+    },
+
+    profilepicture: {
+        type: String,
+        required: true,
+        default : "https://www.shutterstock.com/image-vector/user-profile-icon-vector-avatar-600nw-2247726673.jpg"
     }
+       
 });
 
 const user = mongoose.model("user", userSchema);

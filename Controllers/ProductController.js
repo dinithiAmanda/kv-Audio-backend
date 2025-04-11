@@ -13,8 +13,6 @@ export function getProducts(req, res) {
         return
     }
 
-
-
         
     const data = req.body;
     const newproduct = new product(data);

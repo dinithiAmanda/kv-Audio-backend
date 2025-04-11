@@ -3,6 +3,8 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import userRoutes from "./Routes/user-routes.js";
 import productRoutes from "./Routes/product-routes.js";
+import jwt from "jsonwebtoken";
+import reviewRoutes from "./Routes/reveiwRoutes.js";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -41,6 +43,7 @@ conection.once("open", () => {
 
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/reviews", reviewRoutes);
 
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
