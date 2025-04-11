@@ -23,3 +23,22 @@ export function addReview(req, res) {
             res.status(500).json({ error: "Review registration failed" });
         });
 }
+
+export function getreviews(req, res) {
+    const user = req.user;
+
+    if (user == null || user.role != "admin") {
+        review.find({}).then((reviews) => {
+            res.json(reviews);
+        })
+        returns
+}
+
+    if (user.role == "admin") {
+        review.find({}).then((reviews) => {
+            res.json(reviews);
+        })
+    }
+}
+
+

@@ -5,6 +5,7 @@ const reviewRouter = express.Router();
 
 const reviewRouters = express.Router();
 
-reviewRouters.post("/", addReview)
+reviewRouter.post("/", addReview)
+reviewRouter.get("/", getreviews)
 
-export default reviewRouters;
+export default reviewRouter;
